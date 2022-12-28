@@ -1,4 +1,55 @@
-alert ("Bienvenidos a la compra de tu proximo automotor!")
+let emailF = document.querySelector("#exampleInputEmail1");
+let nypF = document.querySelector("#nyP");
+let modeloF = document.querySelector("#modeloA");
+let precioF = document.querySelector("#precioA");
+let botonS = document.querySelector(".Enviar")
+
+emailF.addEventListener("input", function () {
+      console.log(emailF.value)  
+});
+
+nypF.addEventListener("input", function () {
+      console.log (nypF.value)  
+});
+
+modeloF.addEventListener("input", function () {
+    console.log (modeloF.value)  
+});
+
+precioF.addEventListener("input", function () {
+    console.log (precioF.value)  
+});
+
+botonS.onclick = function () {
+    alert(`Ya recibimos tu formulario, dentro de 3 dias habiles nos estaremos contactando`);
+    let form = new Formulario (emailF.value, nypF.value, modeloF.value, precioF.value);
+    const aJson = JSON.stringify(form);
+    localStorage.setItem("Formulario de contacto", aJson);
+}
+
+
+
+
+
+
+
+
+
+function Formulario ( email, nyp, modelo, precio ) {
+    this.email = email;
+    this.nyp = nyp;
+    this.modelo = modelo;
+    this.precio = precio;
+}
+
+
+
+
+
+
+
+
+/*alert ("Bienvenidos a la compra de tu proximo automotor!")
 
 alert ("Indique en el siguiente cartel el auto que le interesa")
 
@@ -95,6 +146,7 @@ switch (auto) {
         alert ("El valor ingresado no es valido")
         break;
 }
+*/
 
 
 /*

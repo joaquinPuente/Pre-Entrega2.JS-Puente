@@ -22,9 +22,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Usados</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Agregar</a>
-            </li>
           </ul>
     </nav>
 
@@ -46,6 +43,7 @@
               <h5 class="card-title">Modelo</h5>
               <p class="card-text">Descripcion abrebiada del producto como el precio y la disponibilidad.</p>
               <a href="#" class="btn btn-primary">Agregar al carrito.</a>
+              <a href="#" class="btn btn-danger">Borrar.</a>
             </div>
           </div>
 
@@ -55,6 +53,7 @@
               <h5 class="card-title">Modelo</h5>
               <p class="card-text">Descripcion abrebiada del producto como el precio y la disponibilidad.</p>
               <a href="#" class="btn btn-primary">Agregar al carrito.</a>
+              <a href="#" class="btn btn-danger">Borrar.</a>
             </div>
           </div>
 
@@ -64,16 +63,44 @@
               <h5 class="card-title">Modelo</h5>
               <p class="card-text">Descripcion abrebiada del producto como el precio y la disponibilidad.</p>
               <a href="#" class="btn btn-primary">Agregar al carrito.</a>
+              <a href="#" class="btn btn-danger">Borrar.</a>
             </div>
           </div>
 
   </section>
+  <section class="agregar">
+    <fieldset>
+      <h3>Para ingresar un producto a vender, rellenar este formulario y lo estaremos contactando</h3>
+    <form id="formulario">
+      <div class="form-group"> 
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Nombre y Apellido</label>
+        <input type="text" class="form-control" id="nyP" placeholder="Ejemplo: Joaquin Puente">
+      </div>
+      <div class="form-group">
+          <label for="exampleInputPassword1">Modelo del auto</label>
+          <input type="text" class="form-control" id="modeloA" placeholder="Ejemplo: Toyota corolla">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Precio</label>
+          <input type="text" class="form-control" id="precioA" placeholder="Ejemplo: 3000000">
+        </div>
+       
+      <button type="submit" class="btn btn-primary Enviar">Enviar</button>
+      <button type="delete" class="btn btn-danger">Borrar</button>
+    </form>
+  </section>
+  </fieldset>
   <footer>
     <div class="card text-center">
       <div class="card-body">
         <h5 class="card-title">Carrito de Compras</h5>
         <p class="card-text"></p>
         <a href="#" class="btn btn-primary">Ir al 🛒</a>
+        <a href="#" class="btn btn-danger">Borrar carrito</a>
       </div>
     </div>
   </footer>

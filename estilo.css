@@ -24,3 +24,11 @@ body {
 footer {
     margin: 20px 40%;
 }
+
+.agregar {
+    margin: 20px 10%;
+}
+
+.agregar div {
+    margin: 2px;
+}
