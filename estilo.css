@@ -5,9 +5,14 @@ body {
 }
 
 .buscador {
-    margin: 20px;
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
+}
+
+.buscador div {
+    margin: 10px;
 }
 
 .cartas {
