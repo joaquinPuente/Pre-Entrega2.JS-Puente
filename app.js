@@ -1,33 +1,70 @@
+const stockProductos = [
+    {id:1, img:"./img/fiat-cronos.jpg" , Modelo: "Fiat Cronos", Desc:"El auto perfecto para ciudades", Precio: 3627600 },
+    {id:2, img: "./img/citroen-c4.jfif", Modelo: "Citroen C4 Nuevo", Desc:"Auto para quien busca confort", Precio: 3410000 },
+    {id:3, img: "./img/citroen-berlingo.jpg", Modelo:"Citroen Berlingo", Desc:"Furgoneta perfecta para fletes", Precio: 3825300 },
+    {id:4, img: "./img/gol-trend.jpg" ,Modelo: "Volskwagen Gol Trend", Desc:"La mejor opcion como primer auto", Precio: 3600000 }
+]
+
+
+
 let emailF = document.querySelector("#exampleInputEmail1");
 let nypF = document.querySelector("#nyP");
 let modeloF = document.querySelector("#modeloA");
 let precioF = document.querySelector("#precioA");
 let botonS = document.querySelector(".Enviar")
 let info = document.querySelector(".info")
-
+let carrito = []
 let buscar = document.querySelector("#form1")
 let btnB = document.querySelector(".btnBuscar")
 let infoB = document.querySelector(".infoB")
 
-buscar.addEventListener("input", function () {
-    artBuscado = buscar
-    console.log(artBuscado.value)
+let contenedor = document.querySelector(".cartas")
+
+stockProductos.forEach((autos) => {
+    const { id, img, Modelo, Desc, Precio} = autos
+    contenedor.innerHTML += `
+    <div class="card" style="width: 18rem;">
+            <img src="${img}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">${Modelo}</h5> 
+              <p class="card-text">${Desc}</p>
+              <p class="card-text">$${Precio}</p>             
+              <button onclick="agregarCarrito(${id})" class="btn btn-primary btn1">Agregar al carrito.</button>
+            </div>
+        </div>
+    `
 })
 
-btnB.addEventListener("click", function () {
-        const compra = [
-            { nombre: "Fiat cronos", precio: 3627600 },
-            { nombre: "Citroen Nuevo C3", precio: 3410000 },
-            { nombre: "Citroen Berlingo Furgón", precio: 3825300 },
-        ];
-        const resultado = compra.filter((el) => el.nombre.includes(artBuscado.value));
-        console.log(resultado);
-        infoB.innerHTML= `<div class="alert alert-warning" role="alert">
-    <h5>El resultado de su busqueda es ${resultado}</h5></div>
-    `;
+function agregarCarrito (id) {
+    const item = stockProductos.find((autos) => autos.id === id)
+    carrito.push(item)
+    console.log(carrito)
+}
 
-    })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Formulario
 emailF.addEventListener("input", function () {
       console.log(emailF.value)  
 });
@@ -50,51 +87,6 @@ botonS.onclick = function () {
     const aJson = JSON.stringify(form);
     localStorage.setItem("Formulario de contacto", aJson);
 }
-
-
-let carrito = []
-
-let btn1 = document.querySelector(".btn1")
-btn1.addEventListener("click", () => {
-    console.log(`apretaste btn1`)
-    
-    carrito.push(3410000)
-})
-
-
-let btn2 = document.querySelector(".btn2")
-btn2.addEventListener("click", () => {
-    console.log(`apretaste btn2`)
-    
-    carrito.push(3825300)
-})
-
-let btn3 = document.querySelector(".btn3")
-btn3.addEventListener("click", () => {
-    console.log(`apretaste btn3`)
-   
-    carrito.push(3825300)
-})
-
-console.log(carrito)
-
-let btnC = document.querySelector(".btnC")
-btnC.addEventListener ("click", () => {
-    let suma = 0;
-    for (let i = 0 ; i < carrito.length ; i++) {
-        suma += carrito[i];
-    }
-    console.log(suma)
-    info.innerHTML= `<div class="alert alert-warning" role="alert">
-    <h5> Muchas gracias por su compra! Su monto a pagar es $ ${suma}</h5></div>
-    `;
-})
-
-let btnBorrarCompra = document.querySelector (".btnCb")
-btnBorrarCompra.addEventListener ("click", ()=> {
-    location.reload();
-})
-
 function Formulario ( email, nyp, modelo, precio ) {
     this.email = email;
     this.nyp = nyp;
@@ -102,8 +94,22 @@ function Formulario ( email, nyp, modelo, precio ) {
     this.precio = precio;
 }
 
-let btnR = document.querySelector(".btnrefresh")
-btnR.addEventListener ("click", ()=> {
-    console.log(`seleccione borrar`)
+//Funcion para Buscar!!!
+
+buscar.addEventListener("input", function () {
+    artBuscado = buscar
+    console.log(artBuscado.value)
 })
 
+btnB.addEventListener("click", function () { 
+        const compra = [
+            { nombre: "Fiat cronos", precio: 3627600 },
+            { nombre: "Citroen Nuevo C3", precio: 3410000 },
+            { nombre: "Citroen Berlingo Furgón", precio: 3825300 },
+        ];
+        const resultado = compra.filter((el) => el.nombre.includes(artBuscado.value));
+        console.log(resultado);
+        infoB.innerHTML= `<div class="alert alert-warning" role="alert">
+    <h5>El resultado de su busqueda es ${resultado}</h5></div>
+    `;
+})

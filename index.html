@@ -45,38 +45,7 @@
   </header>
 
   <section class="cartas">
-        <div class="card" style="width: 18rem;">
-            <img src="./img/fiat-cronos.jpg" class="card-img-top" alt="fiat-cronos">
-            <div class="card-body">
-              <h5 class="card-title"> Fiat Cronos</h5> 
-              <p class="card-text">$ 3.627.600 </p>
-              
-              <button href="#" class="btn btn-primary btn1">Agregar al carrito.
-              </button>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="./img/citroen-c4.jfif" class="card-img-top" alt="citroen-c4">
-            <div class="card-body">
-              <h5 class="card-title">Citroen Nuevo C3</h5>
-              <p class="card-text">$ 3.410.000</p>
-
-              <button href="#" class="btn btn-primary btn2">Agregar al carrito.
-              </button>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="./img/citroen-berlingo.jpg" class="card-img-top" alt="citroen-berlingo">
-            <div class="card-body">
-              <h5 class="card-title">Citroen Berlingo</h5>
-              <p class="card-text"> $ 3.825.300</p>
-
-              <button href="#" class="btn btn-primary btn3">Agregar al carrito.
-              </button>    
-            </div>
-        </div>
+        
   </section>
 
   <section class="agregar">
@@ -112,12 +81,47 @@
         <h5 class="card-title">Carrito de Compras</h5>
         <p class="card-text"></p>
 
-        <button href="#" class="btn btn-primary btnC">Ir al 🛒</button>
-        <button href="#" class="btn btn-danger btnCb">Borrar carrito</button>
+        <button class="btn btn-primary btnC" data-bs-toggle="modal"
+        data-bs-target="#modal">Ir al 🛒</button>
         
       </div>
     </div>
+
+    
   </footer>
+<div class="modal" tabindex="-1" role="dialog" id="modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Carrito</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body contedorCarrito" > 
+          
+
+
+
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Comprar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Vaciar carrito</button>
+            <div id="totalCarrito">
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <div class="container">
     <DIv class="info">

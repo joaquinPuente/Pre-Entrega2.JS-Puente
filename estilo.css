@@ -16,8 +16,16 @@ body {
 }
 
 .cartas {
-    display: flex;    
-    justify-content: space-evenly;
+    display: grid;    
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    width: min-content;
+    margin: auto;
+}
+
+.cartas div {
+    margin: 10px;
+
 }
 
 .cartas div img{
@@ -31,7 +39,7 @@ footer {
 }
 
 .agregar {
-    margin: 20px 10%;
+    margin: 20px 30%;
 }
 
 .agregar div {
